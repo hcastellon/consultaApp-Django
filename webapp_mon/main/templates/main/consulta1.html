@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<!-- Basic -->
+        <div class="ex-basic-1 pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Incluir el perfil de usuario -->
+                       <div class="resultados-container">
+                            <table class="resultados-table">
+                                <thead>
+                                        <tr>
+                                            <th>Nombre_Completo</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Ultima_Conexion</th>
+                                            <th>Dias_no_conexion</th>
+                                            <th>Foto_perfil</th>
+                                            <th>Presentacion_Docente</th>
+                                            <th>Fecha_Informe</th>
+                                            <th>Correo</th>
+
+                                            <!-- Agrega más encabezados de columna según tus necesidades -->
+                                        </tr>
+                                </thead>
+                                        <tbody>
+                                            {% for display in get_professors %}
+                                                <tr>
+                                                    <td>{{ display.0 }}</td>
+                                                    <td>{{ display.1 }}</td>
+                                                    <td>{{ display.2 }}</td>
+                                                    <td>{{ display.3 }}</td>
+                                                    <td>{{ display.4 }}</td>
+                                                    <td>{{ display.5 }}</td>
+                                                    <td>{{ display.6 }}</td>
+                                                    <td>{{ display.7 }}</td>
+                                                    <td>{{ display.8 }}</td>
+                                                <!-- Agrega más celdas de datos según tus necesidades -->
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of ex-basic-1 -->
+        <!-- end of basic -->
+{% endblock %}
